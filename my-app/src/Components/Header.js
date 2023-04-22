@@ -1,12 +1,19 @@
+import "../Styles/Header.css";
+import logoKasa from "../Styles/Assets/Vector.png";
+
 function Header() {
-  const h1 = "Ksa";
-  const logo = "./Assets/Vector.png";
+  const h1 = "Kasa";
   return (
-    <h1>
-      {h1.slice(0, 1)}
-      <img src={logo} alt="logo Kasa" />
-      {h1.slice(1, 3)}
-    </h1>
+    <div id="header">
+      <h1>{h1}</h1>
+      <figure>
+        <img id="logo-kasa" src={logoKasa} alt="logo Kasa" width="210px" />
+      </figure>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="">A Propos</a>
+      </nav>
+    </div>
   );
 }
 

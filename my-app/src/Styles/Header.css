@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    display: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+nav a {
+    color : rgba(255, 96, 96, 1);
+    font-family: Montserrat;
+    font-size: 24px;
+}

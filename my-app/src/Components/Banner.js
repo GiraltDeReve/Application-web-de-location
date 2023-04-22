@@ -1,5 +1,7 @@
+import "../Styles/Banner.css";
+import imageBanner from "../Styles/Assets/paysage-montagne.png";
+
 function Banner() {
-  const imageBanner = "./Assets/paysage-montagne.png";
   const textBanner = "Chez vous, partout et ailleurs";
 
   return (
