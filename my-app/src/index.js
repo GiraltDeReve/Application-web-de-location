@@ -6,6 +6,7 @@ import App from "./Pages/Home/index";
 import Apropos from "./Pages/Apropos";
 import reportWebVitals from "./reportWebVitals";
 
+// proposition chat GPT
 function Routes() {
   return (
     <Router>
@@ -17,15 +18,7 @@ function Routes() {
   );
 }
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <React.StrictMode>
-//     <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//   </React.StrictMode>
-// );
-
+// code suivant cours
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <Router>
@@ -38,6 +31,16 @@ function Routes() {
 //     </Router>
 //   </React.StrictMode>,
 //   document.getElementById("root")
+// );
+
+// Code d'avant routage
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   <React.StrictMode>
+//     <BrowserRouter>
+//       <App />
+//     </BrowserRouter>
+//   </React.StrictMode>
 // );
 
 // If you want to start measuring performance in your app, pass a function
