@@ -1,14 +1,12 @@
-import Header from "../../Components/Header";
 import Banner from "../../Components/Banner";
 import Gallery from "../../Components/Gallery";
 
 function App() {
   return (
-    <div>
-      <Header />
+    <main>
       <Banner />
       <Gallery />
-    </div>
+    </main>
   );
 }
 export default App;

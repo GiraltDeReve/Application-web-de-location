@@ -1,0 +1,38 @@
+#blocError{
+max-width: 95%;
+margin: 0 auto;
+padding-bottom: 40px;
+/* color: $color-secondary; */
+}
+
+#blocError-infos{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: calc(100vh - 250px);
+}
+
+#blocError-title{
+font-weight: 700;
+font-size: 288px;
+color : rgba(255, 96, 96, 1);
+font-family: Montserrat;
+margin: 0;
+}
+        
+#blocError-text{
+font-weight: 500;
+font-size: 36px;
+font-family: Montserrat;
+color: rgba(255, 96, 96, 1);
+}
+
+#blocError-link{
+display: block;
+text-align: center;
+font-weight: 500;
+font-size: 18px;
+font-family: Montserrat;
+color: rgba(255, 96, 96, 1);
+}

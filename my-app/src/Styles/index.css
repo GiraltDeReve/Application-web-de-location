@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 body {
+  font-family: Montserrat;
   width: 1440px;
   margin: auto;
   display: flex;
@@ -12,43 +13,3 @@ body {
 }
 
 
-#gallery-section {
-  width: 1240px;
-  background: #F7F7F7;
-  border-radius: 25px;
-  }
-  
-
-#gallery-items {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-margin: 0;
-padding: 30px 20px;
-}
-
-.gallery-item {
-  width: 340px;
-  height: 340px;
-  list-style-type: none;
-  margin: 30px;
-  border-radius: 10px;
-}
- 
-.gallery-item-title {
-  display: flex;
-  position: absolute;
-  width: 300px;
-  height: 280px;
-  align-items: flex-end;
-  padding: 20px;
-  color: rgba(255, 255, 255, 1);
-}
-
-
-.gallery-item-image {
-  width: 340px;
-  height: 340px;
-  object-fit: cover;
-  border-radius: 10px;
-}

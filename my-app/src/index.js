@@ -1,49 +1,26 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
-import ReactDOM from "react-dom/client";
-import "./Styles/index.css";
+import ReactDOM from "react-dom";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 import App from "./Pages/Home/index";
-import Apropos from "./Pages/Apropos";
-import reportWebVitals from "./reportWebVitals";
+import Apropos from "./Pages/A propos";
+import Logement from "./Pages/Logement";
+import Error from "./Pages/404";
 
-// proposition chat GPT
-function Routes() {
-  return (
+ReactDOM.render(
+  <React.StrictMode>
     <Router>
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route path="/about" component={Apropos} />
-      </Switch>
+      <Header />
+      <Routes>
+        {/* routes remplace switch dans la nouvelle version de recat router */}
+        <Route exact path="/" element={<App />} />
+        <Route path="/apropos" element={<Apropos />} />
+        <Route path="/logement/:id" element={<Logement />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+      <Footer />
     </Router>
-  );
-}
-
-// code suivant cours
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Router>
-//       <Route exact path="/">
-//         <App />
-//       </Route>
-//       <Route exact path="/">
-//         <Apropos />
-//       </Route>
-//     </Router>
-//   </React.StrictMode>,
-//   document.getElementById("root")
-// );
-
-// Code d'avant routage
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <React.StrictMode>
-//     <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//   </React.StrictMode>
-// );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  </React.StrictMode>,
+  document.getElementById("root")
+);
