@@ -3,7 +3,7 @@ import imageFooter from "../Styles/Assets/Logo-copyright.png";
 
 function Footer() {
   return (
-    <section id="footer">
+    <section className="footer">
       <img src={imageFooter} alt="Copyright Logo" />
     </section>
   );

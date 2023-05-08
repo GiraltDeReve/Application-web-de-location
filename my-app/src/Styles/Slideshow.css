@@ -15,7 +15,7 @@ margin: 43px auto;
 .slide-arrow{
     position: absolute;
     top: 50%;
-    height: 15%;
+    height: 50px;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -36,3 +36,24 @@ margin: 43px auto;
     font-weight: 500;
     font-size: clamp(14px, 2vw, 18px);
 }
+
+@media screen and (max-width: 375px) {
+    .carousel {
+        width: 335px;
+        height: 255px;
+        margin: 43px 20px;
+      }
+      .slideCounter {
+        display: none;
+      }
+    .slide-arrow {
+        top: 60%;
+        height: 20px;
+    }
+    .arrow-right{
+        right: 10px;
+    }
+    .arrow-left{
+        left: 10px;
+    }
+  }

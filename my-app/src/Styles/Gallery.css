@@ -1,13 +1,14 @@
 @import "./index.css";
 
 
-#gallery-section {
+.gallery-section {
     width: 1240px;
     background: #F7F7F7;
     border-radius: 25px;
+    margin: auto;
 }
     
-#gallery-items {
+.gallery-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -46,3 +47,29 @@
     object-fit: cover;
     border-radius: 10px;
 }
+
+@media (max-width: 375px) {
+    .gallery-section {
+      width: 100%;
+      background: white;
+    }
+    .gallery-items {
+      margin: 0;
+      padding: 0;
+    }
+    .gallery-item {
+        height: 100%;
+        margin: 20px 0 0px 0;
+        padding: 0;
+    }
+    .gallery-item-image {
+        height: 255px;
+        object-fit: cover;
+    }
+    .gallery-item-title {
+        align-items: center;
+        font-size: 16px;
+        font-weight: 500;
+    }
+  }
+  

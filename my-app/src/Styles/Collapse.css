@@ -45,3 +45,47 @@
     transform: rotate(180deg);
     padding-left: 17px;
 }
+
+.logement {
+    margin-bottom: 50px;
+}
+
+.logement-collapse{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 70px;
+    margin: 30px auto;
+    width: 95%;
+    height: 360px;
+}
+
+.logement-collapse-item{
+    width: 50%;
+}
+ul {
+    list-style-type : none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.logement-collapse-item .collapse-text {
+    height: 169px;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0em;
+    width: 507px;
+  }
+
+  @media screen and (max-width: 375px) {
+.collapse {
+    padding: 0 20px;
+}
+.collapse-title {
+    font-size: 20px;
+}
+.collapse-text {
+    font-size: 19px;
+}
+  }

@@ -5,9 +5,11 @@ import paysageForet from "../Styles/Assets/paysage-foret.png";
 
 function Banner() {
   const location = useLocation();
+  //  hook useLocation = récupérer la localisation actuelle
 
   let bannerContent;
 
+  // selon le nom de la localisation (location.pathname), bannerContent a un contenu différent
   if (location.pathname === "/") {
     bannerContent = (
       <div className="banner">
@@ -34,7 +36,7 @@ function Banner() {
     );
   }
 
-  return <section id="sectionBanner">{bannerContent}</section>;
+  return <section className="sectionBanner">{bannerContent}</section>;
 }
 
 export default Banner;

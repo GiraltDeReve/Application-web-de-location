@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import datas from "../../Data/logements.json";
 import Slideshow from "../../Components/Slideshow";
 import Collapse from "../../Components/Collapse";
+import "../../Styles/Collapse.css";
 import greyStar from "../../Styles/Assets/grey-star.png";
 import redStar from "../../Styles/Assets/red-star.png";
 import "../../Styles/Logements.css";
@@ -16,59 +17,91 @@ function Logement() {
 
 	const idLogement = useParams('id').id;
   // extrait id hébergement depuis paramètres d'URL en utilisant le hook useParams
-	const dataCurrentLogement = datas.filter(data => data.id === idLogement);
+	const dataLogement = datas.filter(data => data.id === idLogement);
 	// filtre les données de l'hébergement actuel en utilisant id hébergement extrait de l'URL
-  
+	// Attention = méthode filter() retourne un tableau avec un seul élément. Pour le récup, il faudra utiliser l'indice [0] même si 1 seul élément.
+	
 	useEffect(() => {
-		setImageSlideshow(dataCurrentLogement[0].pictures);
-	}, [idLogement]);
-  // effet qui se déclenche au changement de l'id de l'hébergement : mises à jour des données de l'hébergement actuel + tableau slideshow
+		if (dataLogement.length !== 0) {
+			// on vérifie que le tableau n'est pas vide parce que l'id n'existerai pas
+		  setImageSlideshow(dataLogement[0].pictures);
+		  // effet qui se déclenche au changement de l'id de l'hébergement : mises à jour des données de l'hébergement actuel + tableau slideshow
+		}
+	  }, [dataLogement, idLogement]);
+	
+	  if (dataLogement.length === 0) {
+		// si tableau vide,redirection sur page error
+		return <Navigate to="/404" />;
+	  }
 
-	const name = dataCurrentLogement[0].host.name.split(' '); 
+	const name = dataLogement [0].host.name.split(' '); 
   // divise le nom de l'hote en deux parties 
-	const rating = dataCurrentLogement[0].rating;
-	const description  = dataCurrentLogement[0].description;
-	const equipments = dataCurrentLogement[0].equipments;
+	const rating = dataLogement [0].rating;
+	const description  = dataLogement [0].description;
+	const equipments = dataLogement [0].equipments;
+	const equipmentsList = equipments.map((equipment, index) => (
+		<li key={index}>{equipment}</li>
+		// pour faire une list d'équipments
+	  ));
+
 
 
 	return (
 		<>
 			<Slideshow imageSlideshow={imageSlideshow}/>
-      {/* Cela affiche le diaporama en utilisant le composant Slideshow et en passant les images de l'hébergement actuel à travers la prop imageSlideshow. */}
+      {/* affiche slideshow en passant les images de l'hébergement actuel grace a la prop imageSlideshow. */}
 			<main className="logement">
 				<div className="logement-content">
 					<div className="logement-infos">
-						<h1>{dataCurrentLogement[0].title}</h1>
-						<p>{dataCurrentLogement[0].location}</p>
+						<h1>{dataLogement [0].title}</h1>
+						<p>{dataLogement [0].location}</p>
 						<div>
-							{dataCurrentLogement[0].tags.map((tag, index) => {
-                // Cela crée un tableau de cinq étoiles et boucle à travers le tableau en utilisant la méthode map. Dans la boucle, l'index est utilisé pour déterminer si l'étoile doit être rouge ou grise en fonction de la note de l'hébergement.
+							{dataLogement [0].tags.map((tag, index) => {
 								return (
 									<button key={index}>{tag}</button>
 								)
 							})}
+							{/*méthode map pour boucler tableau tags pour return bouton du tag */}
 						</div>
 					</div>
 					<div className="logement-host">
 						<div>
 							<div className="logement-host-name">
-								<span>{name[0]}</span>
+								<p>{name[0]}</p>
                 {/* affiche premiére élément nom de l'hote */}
-								<span>{name[1]}</span>
+								<p>{name[1]}</p>
                 {/* deuxiéme élément */}
 							</div>
-							<img className ="logement-host-photo" src={dataCurrentLogement[0].host.picture} alt="Photo de l'hôte de ce logement" />
+							<img className ="logement-host-photo" src={dataLogement [0].host.picture} alt="Photo de l'hôte de ce logement" />
               {/* Affiche l'image de l'hôte de l'hébergement avec propriété "picture" de l'objet "host"  */}
-            </div>
+                        </div>
 							
 						<div className="logement-host-notation">
-							{/* faire étoile */}
+							{[...Array(5)].map((star, index) => {
+								// map pour créer tableau de 5 star.
+								// pour chaque star, fonction calback exécutée(star=élément tableau, index=index de l'élément dans le tableau)
+								const ratingValue = index + 1;
+								// pour que le décompte ne commence pas à 0 : ratingValue prend les valeurs index + 1 donc de 1 à 5
+								return (
+									<img key={index} src={ratingValue <= rating ? redStar : greyStar}/>
+									// pour chaque élément du tableau, comparaison de rating et rattingValue pour savoir si étoile rouge ou grise
+									// rating < ratingVallue = étoile grise 
+									// propriété key : identifie chaque élément dans le tableau
+								)
+							})}
+
 						</div>
 					</div>
 				</div>
-				<div>
-						{/*faire logement-collapse  */}
-				</div>
+				<div className="logement-collapse">
+					<div className="logement-collapse-item">
+						<Collapse title={'Description'} text={description} />	
+						{/* (title, text) viens de l'import collapse */} 
+					</div>
+					<div className="logement-collapse-item" >
+						<Collapse title={'Équipements'} text={<ul>{equipmentsList}</ul>} extraClass="description-collapse"> </Collapse>
+					</div>
+			    </div>
 			</main>
 		</>
 	)

@@ -5,27 +5,27 @@ import "../Styles/Slideshow.css";
 
 function Slideshow({ imageSlideshow }) {
   // argument imageSlideshow(tableau d'images)
-  const [currentIndex, setCurrentIndex] = useState(0);
-  // State = état local appelé currentIndex avec fonction useState qui définir valeur initiale à 0 (tableau vide)
-  // setCurrentIndex= fonction qui permet de mettre à jour l'état
+  const [actuelIndex, setActuelIndex] = useState(0);
+  // State = état local appelé actuelIndex avec fonction useState qui définir valeur initiale à 0 (tableau vide)
+  // setActuelIndex= fonction qui permet de mettre à jour l'état
 
   const nextSlide = () => {
-    setCurrentIndex(currentIndex + 1);
-    //Comportement =  incrémente currentIndex de 1 à chaque appel
-    if (currentIndex === imageSlideshow.length - 1) setCurrentIndex(0);
+    setActuelIndex(actuelIndex + 1);
+    //Comportement =  incrémente actuelIndex de 1 à chaque appel
+    if (actuelIndex === imageSlideshow.length - 1) setActuelIndex(0);
   };
-  // si currentIndex = dernière image du tableau imageSlideshow, setCurrentIndex(0) réinitialise  currentIndex à 0
+  // si actuelIndex = dernière image du tableau imageSlideshow, setActuelIndex(0) réinitialise  actuelIndex à 0
   // ==> pour passer à l'image suivante
 
   const prevSlide = () => {
-    setCurrentIndex(currentIndex - 1);
-    if (currentIndex === 0) setCurrentIndex(imageSlideshow.length - 1);
-    // si currentIndex = 0, on est sur la premiére image du tableau, on renvoi donc sur la derniére image du tableau
+    setActuelIndex(actuelIndex - 1);
+    if (actuelIndex === 0) setActuelIndex(imageSlideshow.length - 1);
+    // si actuelIndex = 0, on est sur la premiére image du tableau, on renvoi donc sur la derniére image du tableau
   };
 
   return (
     <section
-      style={{ backgroundImage: `url(${imageSlideshow[currentIndex]})` }}
+      style={{ backgroundImage: `url(${imageSlideshow[actuelIndex]})` }}
       className="carousel"
     >
       {imageSlideshow.length > 1 && (
@@ -44,7 +44,7 @@ function Slideshow({ imageSlideshow }) {
             onClick={prevSlide}
           />
           <p className="slideCounter">
-            {currentIndex + 1} / {imageSlideshow.length}
+            {actuelIndex + 1} / {imageSlideshow.length}
             {/* on rajoute +1 car un tableau commence par 0 */}
           </p>
         </div>

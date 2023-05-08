@@ -1,6 +1,6 @@
 @import "./index.css";
 
-#sectionBanner {
+.sectionBanner {
     justify-content: center;
     display: flex;
 }
@@ -39,3 +39,22 @@
     object-fit: cover;
     padding: 0;
 }
+
+@media (max-width: 375px) {
+    .banner {
+        width: 335px;
+        height: 111px;
+        padding: 0px 20px;
+        margin-bottom: 0px;
+    }
+  
+    .titleBanner {
+        font-size: 22px;
+        top: 36px;
+        width: 203px;
+        padding: 0px 119px 0px 12px;
+    }
+    .image-banner {
+        height: 111px;
+    }
+  }

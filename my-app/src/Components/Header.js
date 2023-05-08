@@ -4,9 +4,14 @@ import logoKasa from "../Styles/Assets/Vector.png";
 
 function Header() {
   return (
-    <div id="header">
+    <div className="header">
       <figure>
-        <img id="logo-kasa" src={logoKasa} alt="logo Kasa" width="210px" />
+        <img
+          className="logo-kasa"
+          src={logoKasa}
+          alt="logo Kasa"
+          width="210px"
+        />
       </figure>
       <nav>
         <Link to="/">Accueil</Link>

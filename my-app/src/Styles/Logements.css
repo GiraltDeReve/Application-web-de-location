@@ -52,6 +52,10 @@
     align-self: center;
     flex-direction: column;
 }
+.logement-host-name p {
+    margin: 0px;
+    font-size: 18px;
+}
     
 .logement-host-photo {
     width: 64px;
@@ -71,3 +75,17 @@
     height: 30px;
 }
 
+.logement-infos h1 {
+font-size: 36px;
+font-weight: 500;
+}
+
+.logement-infos p {
+font-size: 18px;
+margin-top: 0;
+}
+
+.logement-infos button {
+    font-family: Montserrat;
+    font-size: 14px;
+}
