@@ -65,7 +65,7 @@ function Logement() {
 						</div>
 					</div>
 					<div className="logement-host">
-						<div>
+						<div className="logement-host-infos">
 							<div className="logement-host-name">
 								<p>{name[0]}</p>
                 {/* affiche premiére élément nom de l'hote */}

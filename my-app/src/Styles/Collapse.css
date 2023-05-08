@@ -46,9 +46,6 @@
     padding-left: 17px;
 }
 
-.logement {
-    margin-bottom: 50px;
-}
 
 .logement-collapse{
     display: flex;
@@ -87,5 +84,32 @@ ul {
 }
 .collapse-text {
     font-size: 19px;
+}
+
+.logement-collapse {
+    gap: 0px;
+    margin-top: 0;
+    width: 90%;
+    height: auto;
+    flex-wrap: wrap;
+}
+.logement-collapse-item {
+    width: 100%;
+    padding: 0;
+}
+
+.logement-collapse-item .collapse {
+    margin: 0px;
+    padding: 0;
+}
+.logement-collapse-item .collapse-title {
+    font-size: 19px;
+    height: 30px;
+}
+
+.logement-collapse-item .collapse-text {
+    font-size: 15px;
+    width: auto;
+    height: 150px;
 }
   }

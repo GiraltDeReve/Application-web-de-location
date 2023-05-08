@@ -41,7 +41,7 @@ margin: 43px auto;
     .carousel {
         width: 335px;
         height: 255px;
-        margin: 43px 20px;
+        margin: 0 15px 20px;
       }
       .slideCounter {
         display: none;
