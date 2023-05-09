@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import App from "./Pages/Home/index";
-import Apropos from "./Pages/A propos";
-import Logement from "./Pages/Logement";
+import Header from "./Components/header";
+import Footer from "./Components/footer";
+import App from "./Pages/home";
+import Apropos from "./Pages/a propos";
+import Logement from "./Pages/logement";
 import Error from "./Pages/404";
 
 ReactDOM.render(

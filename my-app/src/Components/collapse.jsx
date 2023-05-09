@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Styles/Collapse.css";
+import "../Styles/collapse.css";
 import arrow from "../Styles/Assets/Arrow.png";
 
 function Collapse({ title, text }) {

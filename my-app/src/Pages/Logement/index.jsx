@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import { useParams, Navigate } from "react-router-dom";
 import datas from "../../Data/logements.json";
-import Slideshow from "../../Components/Slideshow";
-import Collapse from "../../Components/Collapse";
-import "../../Styles/Collapse.css";
+import Slideshow from "../../Components/slideshow";
+import Collapse from "../../Components/collapse";
+import "../../Styles/collapse.css";
 import greyStar from "../../Styles/Assets/grey-star.png";
 import redStar from "../../Styles/Assets/red-star.png";
-import "../../Styles/Logements.css";
+import "../../Styles/logements.css";
 
 
 function Logement() {

@@ -1,4 +1,4 @@
-import "../Styles/Gallery.css";
+import "../Styles/gallery.css";
 import { Link } from "react-router-dom";
 import imageNotFound from "../Styles/Assets/image-not-found.png";
 

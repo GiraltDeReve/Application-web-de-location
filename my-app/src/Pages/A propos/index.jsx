@@ -1,6 +1,6 @@
 import React from "react";
-import Collapse from "../../Components/Collapse";
-import Banner from "../../Components/Banner";
+import Collapse from "../../Components/collapse";
+import Banner from "../../Components/banner";
 
 
 function Apropos() {

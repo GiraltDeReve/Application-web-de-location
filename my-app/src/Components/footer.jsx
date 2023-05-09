@@ -1,4 +1,4 @@
-import "../Styles/Footer.css";
+import "../Styles/footer.css";
 import imageFooter from "../Styles/Assets/Logo-copyright.png";
 
 function Footer() {

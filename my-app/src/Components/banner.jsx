@@ -1,4 +1,4 @@
-import "../Styles/Banner.css";
+import "../Styles/banner.css";
 import { useLocation } from "react-router-dom";
 import paysageMontagne from "../Styles/Assets/paysage-montagne.png";
 import paysageForet from "../Styles/Assets/paysage-foret.png";

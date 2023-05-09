@@ -1,6 +1,6 @@
 import datas from "../Data/logements.json";
-import "../Styles/Gallery.css";
-import Card from "../Components/Card";
+import "../Styles/gallery.css";
+import Card from "./card";
 
 function Gallery() {
   return (

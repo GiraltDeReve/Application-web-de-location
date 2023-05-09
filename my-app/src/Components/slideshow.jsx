@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ArrowRight from "../Styles/Assets/Arrow-right.png";
 import ArrowLeft from "../Styles/Assets/Arrow-left.png";
-import "../Styles/Slideshow.css";
+import "../Styles/slideshow.css";
 
 function Slideshow({ imageSlideshow }) {
   // argument imageSlideshow(tableau d'images)
