@@ -29,10 +29,10 @@ function Logement() {
 		}
 	  }, [dataLogement, idLogement]);
 	
-	  if (dataLogement.length === 0) {
+	if (dataLogement.length === 0) {
 		// si tableau vide,redirection sur page error
 		return <Navigate to="/404" />;
-	  }
+	}
 
 	const name = dataLogement [0].host.name.split(' '); 
   // divise le nom de l'hote en deux parties 
@@ -44,7 +44,11 @@ function Logement() {
 		// pour faire une list d'équipments
 	  ));
 
-
+	const stars = [];
+	  for (let i = 1; i <= 5; i++) {
+		const starColor = i <= rating ? redStar : greyStar;
+		stars.push(<img key={i} src={starColor} alt={`Étoile ${i}`} />);
+	  }
 
 	return (
 		<>
@@ -77,19 +81,7 @@ function Logement() {
                         </div>
 							
 						<div className="logement-host-notation">
-							{[...Array(5)].map((star, index) => {
-								// map pour créer tableau de 5 star.
-								// pour chaque star, fonction calback exécutée(star=élément tableau, index=index de l'élément dans le tableau)
-								const ratingValue = index + 1;
-								// pour que le décompte ne commence pas à 0 : ratingValue prend les valeurs index + 1 donc de 1 à 5
-								return (
-									<img key={index} src={ratingValue <= rating ? redStar : greyStar}/>
-									// pour chaque élément du tableau, comparaison de rating et rattingValue pour savoir si étoile rouge ou grise
-									// rating < ratingVallue = étoile grise 
-									// propriété key : identifie chaque élément dans le tableau
-								)
-							})}
-
+							{stars}
 						</div>
 					</div>
 				</div>
