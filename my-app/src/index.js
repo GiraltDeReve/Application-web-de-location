@@ -1,15 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React from "react";
-import ReactDOM from "react-dom";
-import Header from "./Components/header";
-import Footer from "./Components/footer";
-import App from "./Pages/home";
-import Apropos from "./Pages/a propos";
-import Logement from "./Pages/logement";
-import Error from "./Pages/404";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Header from './Components/header';
+import Footer from './Components/footer';
+import App from './Pages/home';
+import Apropos from './Pages/a propos';
+import Logement from './Pages/logement';
+import Error from './Pages/404';
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* premier argument de la fonction */}
     <Router>
       <Header />
       <Routes>
@@ -22,5 +23,6 @@ ReactDOM.render(
       <Footer />
     </Router>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root')
+  // deuxiéme argument de la fonction : l'élément DOM cible
 );
