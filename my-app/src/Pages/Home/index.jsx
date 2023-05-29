@@ -1,7 +1,7 @@
 import Banner from "../../Components/banner";
 import Gallery from "../../Components/gallery";
 
-function App() {
+function Home() {
   return (
     <main>
       <Banner />
@@ -9,4 +9,4 @@ function App() {
     </main>
   );
 }
-export default App;
+export default Home;

@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Components/header';
 import Footer from './Components/footer';
-import App from './Pages/home';
+import Home from './Pages/home';
 import Apropos from './Pages/a propos';
 import Logement from './Pages/logement';
 import Error from './Pages/404';
@@ -15,7 +15,7 @@ ReactDOM.render(
       <Header />
       <Routes>
         {/* routes remplace switch dans la nouvelle version de recat router */}
-        <Route exact path="/" element={<App />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/apropos" element={<Apropos />} />
         <Route path="/logement/:id" element={<Logement />} />
         <Route path="*" element={<Error />} />
