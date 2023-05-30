@@ -37,6 +37,7 @@ margin: 43px auto;
     font-size: clamp(14px, 2vw, 18px);
 }
 
+
 @media screen and (max-width: 375px) {
     .carousel {
         width: 335px;

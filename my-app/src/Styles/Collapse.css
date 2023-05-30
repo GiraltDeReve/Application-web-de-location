@@ -75,6 +75,7 @@ ul {
     width: 507px;
   }
 
+  
   @media screen and (max-width: 375px) {
 .collapse {
     padding: 0 20px;

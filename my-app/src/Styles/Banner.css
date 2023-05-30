@@ -40,6 +40,7 @@
     padding: 0;
 }
 
+
 @media (max-width: 375px) {
     .banner {
         width: 335px;

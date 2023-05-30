@@ -38,6 +38,7 @@ color: rgba(255, 96, 96, 1);
 }
 
 
+
 @media screen and (max-width: 375px) {
     .error-title{
         font-size: 96px;
