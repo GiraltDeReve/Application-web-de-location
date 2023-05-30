@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Header from './Components/header';
 import Footer from './Components/footer';
 import Home from './Pages/home';
-import Apropos from './Pages/a propos';
+import Apropos from './Pages/apropos';
 import Logement from './Pages/logement';
 import Error from './Pages/404';
 
